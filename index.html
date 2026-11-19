@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FirstSeller — продавать в один клик</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="Анализ маркетплейсов Terra Pro: что теряет заказы, почему, кому поручить и помогло ли. Цель — продавать в один клик.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FirstSeller">
+<meta property="og:title" content="FirstSeller — продавать в один клик">
+<meta property="og:description" content="Анализ маркетплейсов Terra Pro: что теряет заказы, почему, кому поручить и помогло ли. Цель — продавать в один клик.">
+<meta property="og:url" content="https://vldvr11.github.io/firstseller-roadmap/">
+<meta property="og:image" content="https://vldvr11.github.io/firstseller-roadmap/cover.jpg?v=20261119">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&family=Unbounded:wght@900&display=swap">
+<style>
+:root{color-scheme:dark;--bg:#0B0B0C;--panel:#141416;--panel2:#1A1A1D;--line:#26262A;--ink:#F2F2F3;--muted:#8B8B93;--dim:#5C5C63;
+  --amber:#FFB547;--amber-soft:rgba(255,181,71,.14);--green:#5BD68A;--green-soft:rgba(91,214,138,.12);--blue:#7AA7FF;--blue-soft:rgba(122,167,255,.12)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.5 Onest,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding-block:40px 24px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:700}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.02;margin:10px 0 12px;font-weight:800;letter-spacing:-.02em}
+.lead{color:var(--muted);max-width:720px;margin:0 0 28px;font-size:16px}
+.progress{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px 22px;margin-bottom:28px}
+.bar{display:flex;height:12px;border-radius:99px;overflow:hidden;background:var(--panel2);gap:3px}
+.bar i{display:block;height:100%;border-radius:99px;transform-origin:left;animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both}
+.bar .d{background:var(--green)} .bar .w{background:var(--amber);animation-delay:.15s} .bar .n{background:var(--blue);opacity:.55;animation-delay:.3s}
+.legend{display:flex;gap:22px;flex-wrap:wrap;margin-top:12px;color:var(--muted);font-size:14px}
+.legend b{color:var(--ink);font-size:20px;margin-right:6px;font-weight:700}
+.legend span::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px;vertical-align:1px;background:currentColor}
+.legend .d{color:var(--green)} .legend .w{color:var(--amber)} .legend .n{color:var(--blue)}
+.legend span b{color:var(--ink)}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:44px}
+.col{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:14px;min-width:0}
+.col header{display:flex;align-items:center;gap:10px;padding:4px 6px 12px}
+.col h3{margin:0;font-size:15px;font-weight:700}
+.col .cnt{margin-left:auto;font-size:13px;color:var(--muted);background:var(--panel2);border-radius:99px;padding:2px 10px}
+.dot{width:10px;height:10px;border-radius:50%}
+.done .dot{background:var(--green)} .next .dot{background:var(--blue)}
+.wip .dot{background:var(--amber);box-shadow:0 0 0 0 rgba(255,181,71,.6);animation:pulse 2.2s infinite}
+.card{position:relative;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-top:8px;
+  animation:up .55s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*55ms + .1s);transition:transform .18s,border-color .18s,background .18s}
+.card:hover{transform:translateY(-2px);border-color:#3A3A40;background:#1E1E22}
+.card h4{margin:0 0 3px;font-size:14.5px;font-weight:600;line-height:1.35}
+.card p{margin:0;color:var(--muted);font-size:13.5px}
+.card ul{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:13px}
+.card li{margin:2px 0}
+.card b{color:var(--ink);font-weight:600}
+.card code,.lead code{font:500 12.5px ui-monospace,Consolas,monospace;background:#232327;border-radius:6px;padding:1px 6px;color:var(--amber)}
+.done .card{border-left:3px solid var(--green)}
+.wip .card{border-left:3px solid var(--amber);background:linear-gradient(90deg,var(--amber-soft),transparent 60%),var(--panel2)}
+.next .card{border-left:3px solid rgba(122,167,255,.5);padding-left:40px}
+.num{position:absolute;left:12px;top:12px;width:20px;height:20px;border-radius:50%;background:var(--blue-soft);color:var(--blue);font-size:11.5px;font-weight:700;display:grid;place-items:center}
+h2{font-size:26px;margin:0 0 18px;font-weight:800;letter-spacing:-.01em}
+.row2{display:grid;grid-template-columns:2fr 1fr;gap:16px;margin-bottom:48px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px}
+.box h3{margin:0 0 4px;font-size:15px}
+.ideas{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.idea{border-style:dashed}
+.stack{display:grid;gap:16px;align-content:start;min-width:0}
+.wait{border-color:rgba(255,181,71,.35)} .wait h3{color:var(--amber)}
+.reps{display:grid;gap:8px;margin-bottom:48px}
+.rep{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.rep summary{cursor:pointer;list-style:none;padding:14px 18px;font-weight:700;display:flex;align-items:center;gap:10px}
+.rep summary::-webkit-details-marker{display:none}
+.rep summary::before{content:"";width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(-45deg);transition:transform .2s}
+.rep[open] summary::before{transform:rotate(45deg)}
+.rep summary:focus-visible{outline:2px solid var(--amber);outline-offset:-2px}
+.rep[open] summary{border-bottom:1px solid var(--line)}
+.rep-body{padding:6px 18px 16px;font-size:14px;color:var(--muted)}
+.rep-body h4{color:var(--ink);font-size:15px;margin:16px 0 4px}
+.rep-body h5{color:var(--amber);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:12px 0 4px}
+.rep-body ul,.rep-body ol{margin:0;padding-left:20px}
+.rep-body li{margin:4px 0}
+.rep-body b{color:var(--ink)}
+.rep-body .t{color:var(--dim);font-size:12px;margin-left:6px;font-variant-numeric:tabular-nums}
+.rep-body .stamp{color:var(--dim);font-size:12px;margin-top:14px}
+.limits{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:13.5px}
+.limits li{margin:6px 0}
+.tl{position:relative;padding-left:34px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--amber),var(--line) 30%,var(--line))}
+.tl-item{position:relative;margin-bottom:26px;animation:up .6s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*90ms + .2s)}
+.tl-node{position:absolute;left:-31px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--dim)}
+.tl-item:first-child .tl-node,.tl-item.wip .tl-node{border-color:var(--amber);background:var(--amber-soft)}
+.tl-item.wip .tl-node{animation:pulse 2.2s infinite}
+.tl-date{font-weight:700;font-size:16px;margin-bottom:6px}
+.tl-item.wip .tl-date{color:var(--amber)}
+.tl-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px}
+.tl-cards .card{margin-top:0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:20px;padding:18px 0 8px;color:var(--dim);font-size:12.5px}
+.vd{color:var(--dim);text-decoration:none;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.vd span{font:900 12px Unbounded,sans-serif;letter-spacing:.02em;text-transform:none;color:#9A9AA2;transition:color .2s}
+.vd i{font-style:normal;color:var(--amber);display:inline-block;animation:glow 3.6s ease-in-out infinite;transition:transform .2s}
+.vd:hover span{color:var(--ink)} .vd:hover i{transform:scale(1.5)}
+.why{color:var(--ink);max-width:820px;margin:0 0 36px;font-size:clamp(17px,2vw,20px);line-height:1.5;font-weight:400}
+.steps{list-style:none;margin:0 0 40px;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;counter-reset:s}
+.step{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;animation:up .55s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*70ms)}
+.step:not(:last-child)::after{content:"";position:absolute;right:-9px;top:28px;width:6px;height:6px;border-top:2px solid var(--amber);border-right:2px solid var(--amber);transform:rotate(45deg);opacity:.7}
+.sn{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--amber-soft);color:var(--amber);font-weight:700;font-size:13px;margin-bottom:10px}
+.step h4{margin:0 0 6px;font-size:16px}
+.step p{margin:0;color:var(--muted);font-size:13.5px}
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-bottom:44px}
+.fact{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;animation:up .55s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*45ms)}
+.fact b{display:block;font-size:28px;font-weight:800;letter-spacing:-.02em;color:var(--amber);font-variant-numeric:tabular-nums;line-height:1.1;margin-bottom:6px}
+.fact span{color:var(--muted);font-size:13.5px}
+@media (max-width:1000px){.steps{grid-template-columns:1fr 1fr}.step::after{display:none}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+@keyframes up{from{transform:translateY(8px)}to{transform:none}}
+@keyframes grow{from{transform:scaleX(.35)}to{transform:scaleX(1)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,181,71,.55)}70%{box-shadow:0 0 0 9px rgba(255,181,71,0)}100%{box-shadow:0 0 0 0 rgba(255,181,71,0)}}
+@keyframes glow{0%,100%{opacity:.55;text-shadow:none}50%{opacity:1;text-shadow:0 0 8px rgba(255,181,71,.8)}}
+@media (max-width:900px){.cols,.row2{grid-template-columns:1fr}}
+@media (max-width:520px){.wrap{padding-block:28px 16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.tl-cards{grid-template-columns:1fr}.tl{padding-left:28px}.tl-node{left:-25px}.tl::before{left:6px}}
+@media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">FirstSeller · Terra Pro</div>
+  <h1>FirstSeller</h1>
+  <p class="why"><b>Главная цель — продавать в один клик.</b> Нажал кнопку, и товар выходит на площадку с карточкой, ценой и остатками, которые продают. Для этого сначала нужен анализ, и он уже работает: каждое утро программа показывает, какие товары Terra Pro на маркетплейсе теряют заказы, почему это происходит, кому это поручить и что именно сделать. После правки она проверяет, помогло ли, и делает это честно: сравнивает с похожими товарами, которые не трогали.</p><h2>Как это работает</h2><ol class="steps"><li class="step" style="--i:0"><span class="sn">1</span><h4>Собирает</h4><p>Плагин в Chrome каждый день забирает из кабинета Узума воронку по каждому товару, цвету и дню: показы, переходы, корзины, заказы, рекламу. Справочник, остатки и фото приходят через Seller API, а остатки нашего склада берутся из 1С.</p></li><li class="step" style="--i:1"><span class="sn">2</span><h4>Сверяет</h4><p>Сравнивает каждый товар не со средним по магазину, а с лучшими 25% товаров того же типа, сезона и цены. Например, куртки сравниваются с куртками, а летнее в ноябре не считается проблемой фото.</p></li><li class="step" style="--i:2"><span class="sn">3</span><h4>Ставит диагноз</h4><p>Ищет, где теряются покупатели: мало показов, плохая обложка, слабая карточка или цена. Учитывает выбитые размеры, мёртвый остаток, сезон и нужен ли дозаказ.</p></li><li class="step" style="--i:3"><span class="sn">4</span><h4>Раздаёт</h4><p>У каждой задачи есть исполнитель (дизайнер, склад, цена и акции, контент), приоритет, причина с цифрами и ТЗ с целью в цифрах («CTR не ниже, чем у лучших»). Задачи раздаются пачкой, вместе с Excel и текстом для Telegram.</p></li><li class="step" style="--i:4"><span class="sn">5</span><h4>Проверяет эффект</h4><p>Сравнивает «до → после» с контрольной группой похожих товаров, которые не трогали, и выносит вердикт: успех, хуже, без эффекта или мало данных. Что сработало, попадает в «Знания» и в следующие ТЗ.</p></li></ol><h2>Факты</h2><div class="facts"><div class="fact" style="--i:0"><b>25%</b><span>лучших того же типа: на них равняемся, а не на среднее</span></div><div class="fact" style="--i:1"><b>−23%</b><span>задач дизайнеру: где виновата цена или текст, задачу получает не он</span></div><div class="fact" style="--i:2"><b>−85%</b><span>ложных «плохое фото» после сравнения с похожими</span></div><div class="fact" style="--i:3"><b>0,7 с</b><span>открывается «Что делать», раньше было около 14 с</span></div><div class="fact" style="--i:4"><b>3 ч</b><span>как часто обновляются остатки площадки и 1С</span></div><div class="fact" style="--i:5"><b>0 ₽</b><span>стоит разметка фото: нейросеть работает на своём компьютере</span></div><div class="fact" style="--i:6"><b>0</b><span>данных о продажах у сторонних сервисов: всё считается на своём компьютере</span></div></div><h2>Роадмап</h2>
+
+  <div class="progress">
+    <div class="bar"><i class="d" style="width:50.0%"></i><i class="w" style="width:13.6%"></i><i class="n" style="width:36.4%"></i></div>
+    <div class="legend"><span class="d"><b>11</b>готово</span><span class="w"><b>3</b>в работе</span><span class="n"><b>8</b>дальше</span></div>
+  </div>
+
+  <div class="cols"><section class="col done"><header><span class="dot"></span><h3>Готово</h3><span class="cnt">11</span></header><article class="card done" style="--i:0"><h4>Ежедневный сбор воронки</h4><p>из кабинета плагином: товары, цвета, дни, 4 недели, реклама — без зависаний и 401.</p></article><article class="card done" style="--i:1"><h4>Остатки</h4><p>склада Узума, нашего склада для Узума и 1С; обновляются при запуске и каждые 3 часа.</p></article><article class="card done" style="--i:2"><h4>«Что делать» по цветам</h4><p>размеры, мёртвый остаток, выбитая сетка, сезон, дозаказ, сравнение с лучшими 25% того же типа, диагноз (обложка / карточка / цена / мало показов).</p></article><article class="card done" style="--i:3"><h4>Кому и что делать</h4><p>исполнитель, приоритет, деньги под риском, причина с цифрами, ТЗ с целью; раздача охапкой с Excel и текстом ТЗ, вкладка «Задачи».</p></article><article class="card done" style="--i:4"><h4>Журнал действий и «Эффект»</h4><p>отметка «что сделали», коллекции, до → после с контрольной группой, вердикт, эксперименты, «Знания» (что работает).</p></article><article class="card done" style="--i:5"><h4>Лучшие похожие и визуальное ТЗ</h4><p>авторазметка фото на своём компьютере, ТЗ языком дизайнера, правила лидеров Ozon.</p></article><article class="card done" style="--i:6"><h4>Реклама</h4><p>буст заказов от продвижения учитывается на всех вкладках.</p></article><article class="card done" style="--i:7"><h4>«Новые карточки»</h4><p>— советы по новым артикулам.</p></article><article class="card done" style="--i:8"><h4>Слежение за выгрузками</h4><p>внутри программы: папки NAS раз в минуту, справочник площадки (новый товар, смена главного фото).</p></article><article class="card done" style="--i:9"><h4>Программа одним файлом</h4><p>с автообновлением, замечания тестировщиков с приёмником на Диск.</p></article><article class="card done" style="--i:10"><h4>Скорость</h4><p>«Что делать» открывается меньше чем за секунду.</p></article></section><section class="col wip"><header><span class="dot"></span><h3>В работе</h3><span class="cnt">3</span></header><article class="card wip" style="--i:0"><h4>Анализ цвета товара</h4><p>какие цвета продаются по типу и сезону, главный цвет карточки, дозаказ и уценка цветов.</p></article><article class="card wip" style="--i:1"><h4>Разбор причин экспериментов</h4><p>что сработало — цена, размеры, показы, сезон или фото.</p></article><article class="card wip" style="--i:2"><h4>WB и Ozon</h4><p>основа готова (адаптеры площадок, свои склады), дальше подключение кабинетов.</p></article></section><section class="col next"><header><span class="dot"></span><h3>Дальше</h3><span class="cnt">8</span></header><article class="card next" style="--i:0"><span class="num">1</span><h4>Аудит с Арсланом по тонкостям</h4><p>Пройтись по логике советов, площадкам и ТЗ с человеком, который знает маркетплейсы изнутри, и внести поправки.</p></article><article class="card next" style="--i:1"><span class="num">2</span><h4>Подключение других маркетплейсов и доводка</h4><p>WB, Ozon и следующие площадки: подключить кабинеты, прогнать на живых данных и довести, чтобы сбор, остатки и советы работали стабильно, как на Узуме.</p></article><article class="card next" style="--i:2"><span class="num">3</span><h4>Готовые ТЗ для людей и для ИИ</h4><p>Одной кнопкой отдать задачу: людям — понятный бриф (Excel, текст, Trello); нейросети — готовый промпт с фото и параметрами, чтобы она сразу делала обложку или текст.</p></article><article class="card next" style="--i:3"><span class="num">4</span><h4>Инструкции для новых карточек — довести</h4><p>Вкладка «Новые карточки» уже даёт советы по новым артикулам; дальше — полные пошаговые инструкции, как запустить карточку: фото, текст, цена, размеры, продвижение.</p></article><article class="card next" style="--i:4"><span class="num">5</span><h4>Полные дни по цветам</h4><p>Сейчас дни по цветам собираются только для товаров с недавней выгрузкой; для точного «заказы падают» и до/после нужны все цвета.</p></article><article class="card next" style="--i:5"><span class="num">6</span><h4>ТЗ в Trello</h4><p>Розданные задачи — карточками на доске исполнителя (только после сухого прогона и «да» Влада).</p></article><article class="card next" style="--i:6"><span class="num">7</span><h4>Словесный разбор пар «было/стало»</h4><p>через Codex (только десятки фото, без данных о продажах).</p></article><article class="card next" style="--i:7"><span class="num">8</span><h4>Себестоимость и маржа</h4><p>— какая скидка без убытка (нужен источник).</p></article></section></div>
+
+  
+  <div class="foot"><span>Собрано 19.11.2026 11:02</span>
+    <a class="vd" href="https://vldvr11.github.io/portfolio-vlddvr/index.html" target="_blank" rel="noopener">by <span>vlddvr<i>.</i></span></a></div>
+</div>
+</body>
+</html>
